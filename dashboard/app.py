@@ -23,7 +23,7 @@ st.set_page_config(
 )
 
 # Backend API Configuration
-BACKEND_URL = "http://127.0.0.1:8000/api"
+BACKEND_URL = "https://agent-behavioral-baseline-builder.onrender.com/api"
 
 # Pre-defined templates for easy agent creation
 AGENT_TEMPLATES = {
@@ -228,7 +228,7 @@ backend_online = check_backend_health()
 st.markdown('<div class="main-header">🛡️ Agent Behavioral Baseline Builder</div>', unsafe_allow_html=True)
 
 if not backend_online:
-    st.error("🔌 Cannot connect to backend server. Make sure the FastAPI backend is running at http://127.0.0.1:8000")
+    st.error("🔌 Cannot connect to the backend API. Please check whether the deployed backend is available.")
     st.info("💡 Run `uvicorn backend.main:app --reload` to start the backend API.")
     st.stop()
 
